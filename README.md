@@ -1,11 +1,93 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# 🎮 Master Hex & Strategy Game Arena
 
-  <h1>Built with AI Studio</h2>
+这是一个基于 **React** 和 **TypeScript** 构建的现代化网页游戏集合。本项目汇集了五款经典的策略与益智游戏，不仅拥有精美的 UI 设计，还内置了不同难度的算法 AI 和基于 LLM (Google Gemini) 的策略辅助功能。
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## ✨ 包含的游戏 (Game List)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 1. 🔷 六贯棋 (Hex)
+也就是本项目的核心游戏 "Master Hex"。
+*   **规则**：黑方连接左右两边，白方连接上下两边，先连通者获胜。
+*   **AI 特性**：
+    *   采用 Minimax 算法配合 Alpha-Beta 剪枝。
+    *   **先手必胜**：当 AI 执黑（先手）时，拥有理论上的必胜策略，极具挑战性。
+    *   包含路径搜索可视化与启发式评估。
 
-</div>
+### 2. ⭕ 井字棋 (Tic-Tac-Toe)
+经典的 3x3 连珠游戏。
+*   **AI 特性**：
+    *   完全解算的 Minimax 算法。
+    *   **立于不败之地**：AI 先手或后手均可保证不输（平局或获胜）。
+
+### 3. ⚫ 五子棋 (Gomoku / Renju)
+标准的 15x15 连珠策略游戏。
+*   **AI 特性**：
+    *   基于博弈树搜索与 VCF (Victory by Continuous Four) 连续冲四算杀。
+    *   **开局库**：内置 "花月"、"浦月" 等 26 种经典连珠定式识别。
+    *   **思维可视化**：游戏界面会实时打印 AI 的决策逻辑（"AI_LOGIC_CORE.EXE" 终端面板）。
+    *   *状态：AI 算法持续优化中，目前具备中级业余段位水平。*
+
+### 4. ♠️ 德州扑克 AI 教练 (PokerMind)
+不仅仅是游戏，更是一个 GTO (博弈论最优) 策略训练器。
+*   **AI 特性**：
+    *   **Google Gemini 集成**：利用大语言模型实时分析牌局。
+    *   **实时建议**：根据你的底牌、公共牌、位置和底池赔率，AI 军师会给出 "过牌"、"加注" 或 "弃牌" 的专业建议及理由。
+    *   支持 2-9 人桌局配置。
+
+### 5. 🧱 俄罗斯方块 3D (Tetris)
+经典消除游戏的现代化 3D 重制版。
+*   **游戏特性**：
+    *   **AI 辅助 (Ghost Piece)**：实时计算当前方块的最佳落点位置（白色虚线框），帮助新手玩家规划。
+    *   **落点提示 (Shadow)**：显示方块自然下落后的位置（半透明色块），防止失误。
+    *   **SRS 系统**：支持标准的旋转踢墙 (Wall Kick) 规则。
+    *   **操作**：`W`旋转，`A/D`移动，`S`硬下落（瞬间锁定），`空格`暂停。
+
+---
+
+## 🛠️ 技术栈 (Tech Stack)
+
+*   **前端框架**: React 19
+*   **语言**: TypeScript
+*   **样式**: Tailwind CSS (用于构建响应式和美观的暗色系 UI)
+*   **图标库**: Lucide React
+*   **AI/LLM**: Google GenAI SDK (`@google/genai`)
+*   **图形渲染**: SVG (用于六贯棋和五子棋的高性能绘制)
+
+## 🚀 快速开始 (Getting Started)
+
+1.  **安装依赖**:
+    ```bash
+    npm install
+    ```
+
+2.  **配置环境变量** (用于德州扑克 AI 功能):
+    在根目录创建 `.env` 文件，并添加您的 Google Gemini API Key：
+    ```env
+    API_KEY=your_google_gemini_api_key_here
+    ```
+    *(注：如果不配置 API Key，德州扑克的 AI 建议功能将不可用，但其他游戏不受影响)*
+
+3.  **启动开发服务器**:
+    ```bash
+    npm run dev
+    ```
+
+4.  打开浏览器访问本地地址（通常为 `http://localhost:5173`）。
+
+## ⌨️ 操作指南
+
+*   **全局导航**: 左侧侧边栏可随时切换不同的游戏。
+*   **游戏设置**: 每个游戏右侧或下方均有控制面板，可选择 "双人对战" 或 "人机对战"，以及 AI 的先后手顺序。
+*   **音效**: 游戏内置了落子、胜利和错误的音效反馈。
+
+---
+
+## 📝 待办事项 / 计划 (Roadmap)
+
+- [ ] **五子棋**: AI先手必胜开发中。
+- [ ] **多语言**: 完善英文界面的国际化支持。
+- [ ] **移动端适配**: 进一步优化移动端触摸体验。
+
+---
+
+Enjoy the game! 祝您游戏愉快！

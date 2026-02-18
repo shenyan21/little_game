@@ -1,0 +1,5 @@
+{
+  "name": "六贯棋 (Master Hex)",
+  "description": "策略型六贯棋游戏，包含强力AI对手与双人模式。在对手之前连接你的两边！",
+  "requestFramePermissions": []
+}
